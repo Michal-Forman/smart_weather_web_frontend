@@ -12,7 +12,7 @@ navigator.geolocation.getCurrentPosition(
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     const cords = [latitude, longitude];
-    fetch(`http://localhost:3000/${cords}`)
+    fetch(`https://smart-weather-backend.onrender.com/${cords}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
