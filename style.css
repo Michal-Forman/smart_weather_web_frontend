@@ -1,0 +1,90 @@
+* {
+  font-family: "Nunito", sans-serif;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --fall-green: #43766c;
+  --fall-white: #f8fae5;
+  --fall-light-brown: #b19470;
+  --fall-dark-brown: #76453b;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fall-white);
+}
+
+#titleContainer {
+  margin-top: 4.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+#landscape {
+  width: calc(100% - 3rem);
+  margin-left: 1.5rem;
+  margin-bottom: 32px;
+}
+
+/* cards */
+
+.card {
+  width: calc(100% - 3rem);
+  height: 64px;
+  margin-left: 1.5rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.card.fall {
+  background-color: var(--fall-light-brown);
+}
+
+h2 {
+  margin: 0;
+}
+
+h2.fall {
+  color: var(--fall-white);
+}
+
+.card h2:last-child {
+  margin-left: auto;
+  margin-right: 1.5rem;
+}
+
+.card img {
+  height: 2rem;
+}
+.card .iconContainer {
+  margin-left: 1.5rem;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+/* Alerts */
+
+#alertbox {
+  height: 8rem;
+  width: calc(100% - 3rem);
+  margin-left: 1.5rem;
+  border-radius: 2rem;
+  border: 3px solid var(--fall-dark-brown);
+}

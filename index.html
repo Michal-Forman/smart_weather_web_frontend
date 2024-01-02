@@ -5,15 +5,42 @@
     <title>Smart Weather</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" href="./IMG/favicon.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Smart Weather</h1>
-    <h2 id="umbrellaNeed">Loading...</h2>
-    <h2 id="sunscreenNeed">Loading...</h2>
-    <h2 id="outfit">Loading...</h2>
-    <h2 id="outdoorActivities">Loading...</h2>
+    <div id="titleContainer"><h1>Smart Weather</h1></div>
+    <img id="landscape" />
+    <!-- Cards -->
+    <div class="card">
+      <div class="iconContainer"><img id="umbrellaIMG" /></div>
+      <h2>Umbrella</h2>
+      <h2 id="umbrellaNeed">...</h2>
+    </div>
+    <div class="card">
+      <div class="iconContainer"><img id="sunscreenIMG" /></div>
+      <h2>Sunscreen</h2>
+      <h2 id="sunscreenNeed">...</h2>
+    </div>
+    <div class="card">
+      <div class="iconContainer"><img id="activitiesIMG" /></div>
+      <h2>Activities</h2>
+      <h2 id="outdoorActivities">...</h2>
+    </div>
+    <div class="card">
+      <div class="iconContainer"><img id="outfitIMG" /></div>
+      <h2>Outfit</h2>
+      <h2 id="outfit">...</h2>
+    </div>
+
+    <!-- Alerts -->
+    <div id="alertbox"></div>
   </body>
   <script src="index.js"></script>
 </html>

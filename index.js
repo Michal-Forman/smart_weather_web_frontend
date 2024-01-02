@@ -1,3 +1,54 @@
+function getCurrentSeason() {
+  const month = new Date().getMonth();
+  if (month <= 2 || month === 11) {
+    return "winter";
+  } else if (month <= 5) {
+    return "spring";
+  } else if (month <= 8) {
+    return "summer";
+  } else if (month <= 11) {
+    return "fall";
+  }
+}
+
+// Change UI elements based on season
+const season = "fall"; // Only for testing
+// Get all important elements
+const landscape = document.getElementById("landscape");
+umbrellaIMG = document.getElementById("umbrellaIMG");
+sunscreenIMG = document.getElementById("sunscreenIMG");
+activitiesIMG = document.getElementById("activitiesIMG");
+outfitIMG = document.getElementById("outfitIMG");
+cards = document.querySelectorAll(".card");
+h2s = document.querySelectorAll("h2");
+
+// Actually change the elements
+switch (season) {
+  case "winter":
+    landscape.src = "assets/winter.jpg";
+    break;
+  case "spring":
+    landscape.src = "assets/spring.jpg";
+    break;
+  case "summer":
+    landscape.src = "assets/summer.jpg";
+    break;
+  case "fall":
+    landscape.src = "./IMG/fall_landscape.png";
+    umbrellaIMG.src = "./IMG/fall_umbrella.png";
+    sunscreenIMG.src = "./IMG/fall_sunscreen.png";
+    activitiesIMG.src = "./IMG/fall_activities.png";
+    outfitIMG.src = "./IMG/fall_outfit.png";
+    console.log(cards);
+    cards.forEach((card) => {
+      card.classList.add("fall");
+    });
+    h2s.forEach((h2) => {
+      h2.classList.add("fall");
+    });
+    break;
+}
+
 // Get users location
 if ("geolocation" in navigator) {
   // Geolocation is supported
@@ -12,7 +63,17 @@ navigator.geolocation.getCurrentPosition(
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     const cords = [latitude, longitude];
-    fetch(`https://smart-weather-backend.onrender.com/${cords}`)
+
+    // Fetch data from API
+    let backendUrl;
+    if (window.location.hostname === "") {
+      backendUrl = "http://localhost:3000";
+      console.log("local");
+    } else {
+      backendUrl = "https://smart-weather-backend.onrender.com";
+      console.log("hosted");
+    }
+    fetch(`${backendUrl}/${cords}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
