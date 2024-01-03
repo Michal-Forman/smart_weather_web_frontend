@@ -39,7 +39,6 @@ switch (season) {
     sunscreenIMG.src = "./IMG/fall_sunscreen.png";
     activitiesIMG.src = "./IMG/fall_activities.png";
     outfitIMG.src = "./IMG/fall_outfit.png";
-    console.log(cards);
     cards.forEach((card) => {
       card.classList.add("fall");
     });
@@ -47,6 +46,24 @@ switch (season) {
       h2.classList.add("fall");
     });
     break;
+}
+
+function toggleCard(cardElement) {
+  cardElement.classList.toggle("flipped");
+
+  setTimeout(() => {
+    // Toggle display property after 1 second
+    const cardFront = cardElement.querySelector(".cardFront");
+    const cardBack = cardElement.querySelector(".cardBack");
+
+    if (cardElement.classList.contains("flipped")) {
+      cardFront.style.display = "none";
+      cardBack.style.display = "flex";
+    } else {
+      cardFront.style.display = "flex";
+      cardBack.style.display = "none";
+    }
+  }, 250); // half of the transition time (500ms)
 }
 
 // Get users location
@@ -89,12 +106,31 @@ navigator.geolocation.getCurrentPosition(
         } else if (data.umbrellaNeed < 0.5) {
           document.getElementById("umbrellaNeed").innerHTML = "No";
         }
+        const umbrellaMarker = document.getElementById("umbrellaSpectrumLine");
+        const umbrellaMarkerPosition = data.umbrellaNeed * 100;
+        umbrellaMarker.style.left = `${umbrellaMarkerPosition}%`;
         // Sunscreen
         if (data.sunscreenNeed >= 0.5) {
           document.getElementById("sunscreenNeed").innerHTML = "Yes";
         } else if (data.sunscreenNeed < 0.5) {
           document.getElementById("sunscreenNeed").innerHTML = "No";
         }
+        const sunscreenMarker = document.getElementById(
+          "sunscreenSpectrumLine",
+        );
+        const sunscreenMarkerPosition = data.sunscreenNeed * 100;
+        sunscreenMarker.style.left = `${sunscreenMarkerPosition}%`;
+        // Outdoor activities
+        if (data.outdoorActivities <= 0.5) {
+          document.getElementById("outdoorActivities").innerHTML = "No";
+        } else if (data.outdoorActivities > 0.5) {
+          document.getElementById("outdoorActivities").innerHTML = "Yes";
+        }
+        const outdoorActivitiesMarker = document.getElementById(
+          "outdoorSpectrumLine",
+        );
+        const outdoorActivitiesMarkerPosition = data.outdoorActivities * 100;
+        outdoorActivitiesMarker.style.left = `${outdoorActivitiesMarkerPosition}%`;
         // Outfit
         if (data.outfit <= 0.2) {
           document.getElementById("outfit").innerHTML = "Cold winter";
@@ -106,12 +142,6 @@ navigator.geolocation.getCurrentPosition(
           document.getElementById("outfit").innerHTML = "Spring";
         } else if (data.outfit <= 1) {
           document.getElementById("outfit").innerHTML = "Summer";
-        }
-        // Outdoor activities
-        if (data.outdoorActivities <= 0.5) {
-          document.getElementById("outdoorActivities").innerHTML = "No";
-        } else if (data.outdoorActivities > 0.5) {
-          document.getElementById("outdoorActivities").innerHTML = "Yes";
         }
       })
       .catch((error) => {

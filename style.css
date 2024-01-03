@@ -45,14 +45,29 @@ h1 {
   height: 64px;
   margin-left: 1.5rem;
   border-radius: 2rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 1s;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFront {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 1.5rem;
 }
 
-.card.fall {
-  background-color: var(--fall-light-brown);
+.cardBack {
+  transform: rotateY(180deg);
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 h2 {
@@ -63,7 +78,7 @@ h2.fall {
   color: var(--fall-white);
 }
 
-.card h2:last-child {
+.cardFront h2:last-child {
   margin-left: auto;
   margin-right: 1.5rem;
 }
@@ -79,6 +94,34 @@ h2.fall {
   margin-right: 0.5rem;
 }
 
+.card.fall {
+  background-color: var(--fall-light-brown);
+}
+
+.spectrumContainer {
+  width: 50%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.spectrumLine {
+  width: 100%;
+  height: 1rem;
+  background: linear-gradient(to right, red, green);
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+
+.spectrumMarker {
+  position: relative;
+  width: 2px;
+  height: 2rem;
+  background-color: black;
+  top: -0.5rem;
+}
+
 /* Alerts */
 
 #alertbox {
@@ -87,4 +130,5 @@ h2.fall {
   margin-left: 1.5rem;
   border-radius: 2rem;
   border: 3px solid var(--fall-dark-brown);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
