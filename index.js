@@ -66,6 +66,10 @@ function toggleCard(cardElement) {
   }, 250); // half of the transition time (500ms)
 }
 
+function toggleCardHeight(cardElement) {
+  cardElement.classList.toggle("expanded");
+}
+
 // Get users location
 if ("geolocation" in navigator) {
   // Geolocation is supported
@@ -143,6 +147,9 @@ navigator.geolocation.getCurrentPosition(
         } else if (data.outfit <= 1) {
           document.getElementById("outfit").innerHTML = "Summer";
         }
+        const outfitMarker = document.getElementById("outfitSpectrumLine");
+        const outfitMarkerPosition = data.outfit * 100;
+        outfitMarker.style.left = `${outfitMarkerPosition}%`;
       })
       .catch((error) => {
         // Handle errors

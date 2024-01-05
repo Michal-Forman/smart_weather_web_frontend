@@ -61,14 +61,18 @@
       </div>
     </div>
     <!-- TODO: This card should not actually have a spectrum, but rather expand-->
-    <div class="card" onclick="toggleCard(this);">
+    <div id="outfitCard" class="card" onclick="toggleCardHeight(this);">
       <div class="cardFront">
         <div class="iconContainer"><img id="outfitIMG" /></div>
         <h2>Outfit</h2>
         <h2 id="outfit">...</h2>
       </div>
-      <div class="cardBack">
-        <h2>Placeholder</h2>
+      <div class="cardExpanded">
+        <div class="spectrumContainer">
+          <div class="spectrumLine">
+            <div id="outfitSpectrumLine" class="spectrumMarker"></div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Alerts -->

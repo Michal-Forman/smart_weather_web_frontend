@@ -53,6 +53,42 @@ h1 {
   transition: transform 1s;
 }
 
+#outfitCard {
+  overflow: hidden;
+  transition: height 1s;
+  display: block;
+}
+
+#outfitCard .cardFront {
+  height: 64px;
+  margin-bottom: 0.5rem;
+}
+
+#outfitCard.expanded {
+  height: 300px;
+}
+
+#outfitCard .spectrumContainer {
+  width: calc(100% - 3rem);
+  margin-left: 1.5rem;
+}
+
+#outfitCard .spectrumLine {
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white 18%,
+    blue 22%,
+    blue 38%,
+    brown 42%,
+    brown 58%,
+    green 62%,
+    green 78%,
+    yellow 82%,
+    yellow 100%
+  );
+}
+
 .card.flipped {
   transform: rotateY(180deg);
 }
@@ -119,6 +155,7 @@ h2.fall {
   width: 2px;
   height: 2rem;
   background-color: black;
+  border-radius: 1rem;
   top: -0.5rem;
 }
 
