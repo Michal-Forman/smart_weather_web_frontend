@@ -92,7 +92,7 @@ navigator.geolocation.getCurrentPosition(
       console.log("local");
     } else {
       backendUrl =
-        "https://main-api-0xrx.onrender.com/api/smartWeather/production";
+        "https://main-api-0xrx.onrender.com/api/smart-weather/production";
       console.log("hosted");
     }
     fetch(`${backendUrl}/${cords}`)
