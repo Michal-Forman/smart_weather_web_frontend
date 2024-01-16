@@ -91,7 +91,8 @@ navigator.geolocation.getCurrentPosition(
       backendUrl = "http://localhost:3000";
       console.log("local");
     } else {
-      backendUrl = "https://smart-weather-backend.onrender.com";
+      backendUrl =
+        "https://main-api-0xrx.onrender.com/api/smartWeather/production";
       console.log("hosted");
     }
     fetch(`${backendUrl}/${cords}`)
