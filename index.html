@@ -18,59 +18,69 @@
     <div id="titleContainer"><h1>Smart Weather</h1></div>
     <img id="landscape" />
     <!-- Cards -->
-    <div class="card" onclick="toggleCard(this);">
-      <div class="cardFront">
-        <div class="iconContainer"><img id="umbrellaIMG" /></div>
-        <h2>Umbrella</h2>
-        <h2 id="umbrellaNeed">...</h2>
-      </div>
-      <div class="cardBack">
-        <div class="spectrumContainer">
-          <div class="spectrumLine">
-            <div id="umbrellaSpectrumLine" class="spectrumMarker"></div>
+    <div id="cardsContainer">
+      <div class="card" onclick="toggleCard(this);">
+        <div class="cardFront">
+          <div class="titleAndIconContainer">
+            <div class="iconContainer"><img id="umbrellaIMG" /></div>
+            <h2>Umbrella</h2>
+          </div>
+          <h2 id="umbrellaNeed" class="fetchedData">...</h2>
+        </div>
+        <div class="cardBack">
+          <div class="spectrumContainer">
+            <div class="spectrumLine">
+              <div id="umbrellaSpectrumLine" class="spectrumMarker"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="card" onclick="toggleCard(this);">
-      <div class="cardFront">
-        <div class="iconContainer"><img id="sunscreenIMG" /></div>
-        <h2>Sunscreen</h2>
-        <h2 id="sunscreenNeed">...</h2>
-      </div>
-      <div class="cardBack">
-        <div class="spectrumContainer">
-          <div class="spectrumLine">
-            <div id="sunscreenSpectrumLine" class="spectrumMarker"></div>
+      <div class="card" onclick="toggleCard(this);">
+        <div class="cardFront">
+          <div class="titleAndIconContainer">
+            <div class="iconContainer"><img id="sunscreenIMG" /></div>
+            <h2>Sunscreen</h2>
+          </div>
+          <h2 id="sunscreenNeed" class="fetchedData">...</h2>
+        </div>
+        <div class="cardBack">
+          <div class="spectrumContainer">
+            <div class="spectrumLine">
+              <div id="sunscreenSpectrumLine" class="spectrumMarker"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="card" onclick="toggleCard(this);">
-      <div class="cardFront">
-        <div class="iconContainer"><img id="activitiesIMG" /></div>
-        <h2>Activities</h2>
-        <h2 id="outdoorActivities">...</h2>
-      </div>
-      <div class="cardBack">
-        <div class="spectrumContainer">
-          <div class="spectrumLine">
-            <div id="outdoorSpectrumLine" class="spectrumMarker"></div>
+      <div class="card" onclick="toggleCard(this);">
+        <div class="cardFront">
+          <div class="titleAndIconContainer">
+            <div class="iconContainer"><img id="activitiesIMG" /></div>
+            <h2>Activities</h2>
+          </div>
+          <h2 id="outdoorActivities" class="fetchedData">...</h2>
+        </div>
+        <div class="cardBack">
+          <div class="spectrumContainer">
+            <div class="spectrumLine">
+              <div id="outdoorSpectrumLine" class="spectrumMarker"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- TODO: This card should not actually have a spectrum, but rather expand-->
-    <div id="outfitCard" class="card" onclick="toggleCardHeight(this);">
-      <div class="cardFront">
-        <div class="iconContainer"><img id="outfitIMG" /></div>
-        <h2>Outfit</h2>
-        <h2 id="outfit">...</h2>
-      </div>
-      <div class="cardExpanded">
-        <div class="spectrumContainer">
-          <div class="spectrumLine">
-            <div id="outfitSpectrumLine" class="spectrumMarker"></div>
+      <!-- TODO: This card should not actually have a spectrum, but rather expand-->
+      <div id="outfitCard" class="card" onclick="toggleCardHeight(this);">
+        <div class="cardFront">
+          <div class="titleAndIconContainer">
+            <div class="iconContainer"><img id="outfitIMG" /></div>
+            <h2>Outfit</h2>
+          </div>
+          <h2 id="outfit" class="fetchedData">...</h2>
+        </div>
+        <div class="cardExpanded">
+          <div class="spectrumContainer">
+            <div class="spectrumLine">
+              <div id="outfitSpectrumLine" class="spectrumMarker"></div>
+            </div>
           </div>
         </div>
       </div>

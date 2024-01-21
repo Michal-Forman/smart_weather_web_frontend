@@ -49,25 +49,29 @@ switch (season) {
 }
 
 function toggleCard(cardElement) {
-  cardElement.classList.toggle("flipped");
+  if (window.innerWidth < 500) {
+    cardElement.classList.toggle("flipped");
 
-  setTimeout(() => {
-    // Toggle display property after 1 second
-    const cardFront = cardElement.querySelector(".cardFront");
-    const cardBack = cardElement.querySelector(".cardBack");
+    setTimeout(() => {
+      // Toggle display property after 1 second
+      const cardFront = cardElement.querySelector(".cardFront");
+      const cardBack = cardElement.querySelector(".cardBack");
 
-    if (cardElement.classList.contains("flipped")) {
-      cardFront.style.display = "none";
-      cardBack.style.display = "flex";
-    } else {
-      cardFront.style.display = "flex";
-      cardBack.style.display = "none";
-    }
-  }, 250); // half of the transition time (500ms)
+      if (cardElement.classList.contains("flipped")) {
+        cardFront.style.display = "none";
+        cardBack.style.display = "flex";
+      } else {
+        cardFront.style.display = "flex";
+        cardBack.style.display = "none";
+      }
+    }, 250); // half of the transition time (500ms)
+  }
 }
 
 function toggleCardHeight(cardElement) {
-  cardElement.classList.toggle("expanded");
+  if (window.innerWidth < 500) {
+    cardElement.classList.toggle("expanded");
+  }
 }
 
 // Get users location
