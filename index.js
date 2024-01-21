@@ -34,7 +34,7 @@ switch (season) {
     landscape.src = "assets/summer.jpg";
     break;
   case "fall":
-    landscape.src = "./IMG/fall_landscape.png";
+    landscape.src = "./IMG/fall_landscape.jpg";
     umbrellaIMG.src = "./IMG/fall_umbrella.png";
     sunscreenIMG.src = "./IMG/fall_sunscreen.png";
     activitiesIMG.src = "./IMG/fall_activities.png";
@@ -88,9 +88,11 @@ navigator.geolocation.getCurrentPosition(
     // Fetch data from API
     let backendUrl;
     if (window.location.hostname === "") {
-      backendUrl = "http://localhost:3000";
+      // When developing
+      backendUrl = "http://localhost:3000/api/smart-weather/testing";
       console.log("local");
     } else {
+      // When in production
       backendUrl =
         "https://main-api-0xrx.onrender.com/api/smart-weather/production";
       console.log("hosted");
