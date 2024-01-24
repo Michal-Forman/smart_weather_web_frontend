@@ -148,7 +148,7 @@ navigator.geolocation.getCurrentPosition(
         } else if (data.outfit <= 0.4) {
           document.getElementById("outfit").innerHTML = "Winter";
         } else if (data.outfit <= 0.6) {
-          document.getElementById("outfit").innerHTML = "Warm winter";
+          document.getElementById("outfit").innerHTML = "Fall";
         } else if (data.outfit <= 0.8) {
           document.getElementById("outfit").innerHTML = "Spring";
         } else if (data.outfit <= 1) {
